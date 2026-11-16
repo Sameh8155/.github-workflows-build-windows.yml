@@ -1,0 +1,26 @@
+{
+  "name": "iptv-player",
+  "version": "1.0.0",
+  "description": "IPTV Player",
+  "author": "IPTV Player",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --publish never"
+  },
+  "dependencies": {
+    "hls.js": "^1.5.15"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.iptv.player",
+    "productName": "IPTV Player",
+    "win": {
+      "target": "portable",
+      "artifactName": "IPTV-Player.${ext}"
+    }
+  }
+}

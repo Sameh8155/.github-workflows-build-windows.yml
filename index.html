@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>IPTV Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="side">
+      <div class="row">
+        <select id="country"></select>
+        <select id="group"></select>
+      </div>
+      <input id="search" type="text" placeholder="بحث عن قناة">
+      <div class="row between">
+        <span id="count">جاري التحميل...</span>
+        <button id="addBtn">+ إضافة قنوات</button>
+      </div>
+      <div id="list"></div>
+    </aside>
+    <main id="stage">
+      <video id="video" controls autoplay></video>
+      <div id="status"></div>
+    </main>
+  </div>
+
+  <dialog id="dlg">
+    <h3>إضافة قناة</h3>
+    <input id="chName" type="text" placeholder="اسم القناة">
+    <input id="chUrl" type="text" dir="ltr" placeholder="رابط البث (http...m3u8)">
+    <input id="chGroup" type="text" placeholder="التصنيف (اختياري)">
+    <details>
+      <summary>خيارات متقدمة</summary>
+      <input id="chUa" type="text" dir="ltr" placeholder="User-Agent (اختياري)">
+      <input id="chRef" type="text" dir="ltr" placeholder="Referer (اختياري)">
+    </details>
+    <button id="saveCh">حفظ القناة</button>
+
+    <h3>إضافة قائمة m3u</h3>
+    <input id="plUrl" type="text" dir="ltr" placeholder="رابط قائمة m3u">
+    <div class="row">
+      <button id="loadUrl">تحميل من الرابط</button>
+      <button id="loadFile">اختيار ملف من الجهاز</button>
+    </div>
+
+    <div id="msg"></div>
+    <button id="closeDlg" class="close">إغلاق</button>
+  </dialog>
+
+  <script src="node_modules/hls.js/dist/hls.min.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>
